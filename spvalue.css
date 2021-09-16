@@ -1,0 +1,13 @@
+/* author : Elanthariyan Mano  */
+/* dev */
+textarea {
+	resize: none;
+}
+
+#valuePara {
+	box-sizing: content-box;
+	width: 100%;
+	border: solid #5B6DCD 10px;
+	padding: 5px;
+}
+

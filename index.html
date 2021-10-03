@@ -1,26 +1,66 @@
 <!-- author : Elanthariyan Mano -->
 <!-- dev -->
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
-	  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-      <style src="spvalue.css"></style>
-	  <script src="spvalue.js"></script>
-   </head>
-   <body>
-      <div class="container">
-         <div>
-            <button onclick="clean()">clean</button>
-            <button onclick="toTakeOnlyValue()" clicked>Show Values Only</button>
-         </div>
-         <br/>
-         <div class="container">
-            <textarea id="textarea" rows="30" cols="170" ></textarea>
-         </div>
-         <div>
-            <p id="valuePara"></p>
-         </div>
-      </div>
-   </body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="face2.png" type="image/gif" sizes="16x16"/>
+    <title>SPVALUE</title>
+    <style src="spvalue.css"></style>
+    <style>
+        #area {
+            resize: none;
+        }
+        #valuePara {
+            resize: none;
+        }
+        .add-space-top{
+            padding-top:25px;
+        }
+        .add-space-right {
+            padding-right: 25px;
+        }
+        .header-space-right {
+            padding-right: 930px;
+        }
+        .btn-width{
+            width:20px;
+        }
+    </style>
+    <script src="spvalue.js"></script>
+</head>
+<body>
+    
+    <div class="page-header container">
+        <header><img src="face2.png" width="30" height="30" draggable="false" /><span class="header-space-right">&nbsp;SPVALUE</span>
+        <span>
+            <button type="button" class="btn btn-default" id="btnClick" data-placement="bottom" title="name : spvalue"><span class="glyphicon glyphicon-knight"></span>&nbsp;Example</button>
+        </span>
+        </header>
+    </div>
+
+    <div class="container add-space-top">
+        <div class="container add-space-right">
+            <button class="btn btn-danger" onclick="clean()"><span class="glyphicon glyphicon-erase"></span>&nbsp;Clean</button>
+            <button class="btn  btn-primary" onclick="toTakeOnlyValue()"><span class="glyphicon glyphicon-pawn"></span>&nbsp;Show Values Only</button>
+            <button class="btn  btn-primary" onclick="toCap()"><span class="glyphicon glyphicon-pawn"></span>&nbsp;For Caps</button>
+        </div>
+        <div class="container add-space-top">
+            <textarea id="area" rows="12" cols="150" placeholder="Enter your text"></textarea>
+        </div>
+
+        <!--<div class="container add-space-top">
+            <p class="card-text" id="valuePara"></p>
+        </div>-->
+
+        <div class="container cart-to-show add-space-top input-group">                
+            <span class="add-space-right"><textarea id="valuePara" class="" rows="2" cols="100"></textarea></span>
+            <span > </span>
+        </div>
+     </div>
+
+</body>
 </html>

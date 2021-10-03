@@ -2,8 +2,10 @@
 /* dev */
 $(document).ready(function () {
 	if ($('#valuePara').val() == '' || $('#valuePara').val() == "") {
-		$('#valuePara').css('border', 'none');
+		//$('#valuePara').css('border', 'none');
+		$('.cart-to-show').hide();
 	}
+	$('#btnClick').tooltip({ trigger: 'click' });
 });
 var valueWithIndex = [];
 var value = [];
@@ -13,7 +15,7 @@ var comma = ', ';
 function checkValue() {
 	value = [];
 	valueWithIndex = [];
-	var jsonsplit = $('#textarea').val().split(/\r?\n/);
+	var jsonsplit = $('#area').val().split(/\r?\n/);
 	$.each(jsonsplit, function (i, v) {
 		var arrayValue = v.split(":");
 		if (arrayValue[0] != '') {
@@ -25,8 +27,10 @@ function checkValue() {
 				value.push(arrayValue[1].trim());
 			} else{
 				$('#valuePara').html('');
-				$('#valuePara').css('border', 'none');
+				//$('#valuePara').css('border', 'none');
+				$('.cart-to-show').hide();
 				alert('Please Enter the Formate correctly in Textarea');
+				
 			}
 		}
 	});
@@ -52,14 +56,30 @@ function toTakeOnlyValue() {
 		}
 	});
 	if (data.length != '' && data.length != null) {
-		$('#valuePara').css('border', 'solid');
+		//$('#valuePara').css('border', 'solid');
+		$('.cart-to-show').show();
 	}
 	$('#valuePara').append(data);
 	console.log(data);
 }
 
 function clean() {
-	$('#textarea ').val('');
+	$('#area').val('');
 	$('#valuePara').html('');
-	$('#valuePara').css('border', 'none');
+	$('.cart-to-show').hide();
+	//$('#valuePara').css('border', 'none');
+}
+function toCap() {
+	debugger;
+	var cap = $('#area').val();
+	if (cap == '' || cap == null || cap == undefined) {
+		alert('please provide a value');
+	} else {
+		$('#area').val('');
+		cap = cap.toUpperCase();
+		$('#area').val(cap);
+	}
+}
+function destory() {
+	$('.cart-to-show').hide();
 }
